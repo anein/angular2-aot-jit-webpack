@@ -1,0 +1,81 @@
+<div *ngIf='stock'>
+
+  <div *ngIf="stockState">
+
+    <!--stock-symbol-->
+    <div class="row stock-card-symbol">
+      <section class="col-xs ">
+        <!--stock type-->
+        <header>
+          <h3>{{ stockType }}</h3>
+        </header>
+        <!--stock symbol-->
+        <article>
+          <h4> {{ stockType | i18nPlural:stockMappingSYMBOLS }} </h4>
+          <div class="stock-label">
+            <small>stock symbol</small>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <!--stock data-->
+    <div class="row">
+
+      <!--value-->
+      <div class=" col-xs stock-value">
+        <span>{{ stock.value | number : '2.3-3' }}</span>
+        <small>{{ stockType | i18nPlural:stockMappingCURRENCY }}</small>
+      </div>
+
+    </div>
+
+    <!--stock trend-->
+    <ul class="stock-trend row middle-xs">
+      <!--change data-->
+      <li class="col-xs-6 col-md-5 col-sm-5 stock-trend-value up"
+          [ngClass]="{'up':stock.positive, 'down': !stock.positive }">
+        <!--trend-->
+        <div>
+          {{ stock.trendSymbol + (stock.change | number: '1.3-3') }}
+          ({{ stock.trendSymbol + (stock.percentChange | number: '1.2-2') + '%' }})
+        </div>
+        <!--label-->
+        <div class="stock-label">
+          <small>trend</small>
+        </div>
+      </li>
+
+      <!--change date-->
+      <li class="col-xs-6 col-md-6 col-sm-5 stock-trend-value">
+        <!--date-->
+        <div>
+          {{ stock.updateDate | date: 'MMM dd, HH:mm:ss' }}
+        </div>
+        <!--label-->
+        <div class="stock-label">
+          <small>updated</small>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- symbol -->
+  <section class="row middle-xs stock-card-symbol" *ngIf="!stockState" >
+    <header class="col-xs-4">
+      <h3 >
+        <a (click)="activate()">{{ stockType }}</a>
+      </h3>
+    </header>
+    <article class="col-xs-8">
+      <div class="stock-value">
+        {{ stock.value | number : '2.3-3' }}
+        <i class="icon" [ngClass]="{'icon-chevron-up':stock.positive, 'icon-chevron-down': !stock.positive }"></i>
+      </div>
+    </article>
+  </section>
+
+  <!--value-->
+
+</div>

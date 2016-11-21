@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-3 col-md-offset-9 col-xs-8 col-xs-offset-4 col-lg-2 col-lg-offset-8">
+    <div *ngIf="weather" class="row middle-xs">
+
+      <div class="col-xs-4">
+        <h3 class="temperature">
+          <!--{{ weather.symbol }}-->
+          {{  weather.symbol + (weather.value | number: '1.0-0') }}
+        </h3>
+      </div>
+
+      <div class="col-xs-8">
+        <h6 class="description">
+          <span class="icon" ngClass="icon-{{ weather.icon }}"></span>
+          <span>{{ weather.description }}</span>
+        </h6>
+        <h4 class="city"> Moscow, Russia </h4>
+        <h4 class="date"> {{ weather.updateDate | date: 'EEE dd, HH:mm:ss'}} </h4>
+      </div>
+
+    </div>
+
+  </div>
+</div>

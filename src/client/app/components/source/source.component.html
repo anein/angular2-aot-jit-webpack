@@ -1,0 +1,34 @@
+<div class="row center-xs">
+
+  <div class="col-md-6 col-sm-8 col-xs-12 col-lg-5">
+
+    <div class="row start-xs">
+      <!--ngFor-->
+      <div class="col-sm-4 col-md-4 col-xs-4" *ngFor="let sourceItem of sources">
+        <div class="row middle-xs source">
+          <!--source icon-->
+          <div class="col-xs-4 col-sm-4 hide-xs">
+            <h4 class="symbol">
+              <i class="icon" ngClass="{{ sourceItem.icon }}"></i>
+            </h4>
+          </div>
+          <!--source data-->
+          <div class="col-xs-12 col-sm-8">
+            <!--title-->
+            <h6 class="title">
+              {{ sourceItem.title | lowercase}}
+            </h6>
+            <!--link-->
+            <h6 class="link">
+              <a [attr.href]='sourceItem.link' target="_blank"> {{ sourceItem.source | uppercase }}</a>
+            </h6>
+          </div>
+        </div>
+      </div> <!-- end col -->
+
+    </div> <!-- end row -->
+
+  </div>
+
+
+</div>

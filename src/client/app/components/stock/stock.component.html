@@ -1,0 +1,16 @@
+<!--stock-component-->
+<div class="row middle-xs center-xs">
+
+  <div class="col-md-3 col-sm-4 col-xs-10" >
+
+    <stock-card *ngFor="let stockItem of stocks"
+                (update)="changeStockType($event)"
+                [type]="stockItem.type"
+                [active]="!!stockItem.active"
+                [ngClass]="{'active': !!stockItem.active}">
+
+    </stock-card>
+  </div>
+
+</div>
+<!--/stock-component-->

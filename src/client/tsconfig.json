@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target"                : "es5",
+    "module"                : "commonjs",
+    "moduleResolution"      : "node",
+    "declaration"           : false,
+    "noImplicitAny"         : false,
+    "removeComments"        : true,
+    "noLib"                 : false,
+    "emitDecoratorMetadata" : true,
+    "experimentalDecorators": true,
+    "sourceMap"             : true,
+    "listFiles"             : false,
+    "outDir"                : "dist",
+    "pretty"                : true,
+    "types"                 : [
+      "core-js",
+      "node"
+    ]
+  },
+  "files"          : [
+    "./app/app.module.ts",
+    "./app/main.ts"
+  ],
+  "exclude"        : [
+    "node_modules",
+    "aot/node_modules",
+    "aot/node_modules/@angular",
+    "node_modules/@types",
+    "node_modules/@angular",
+    "node_modules/@ngtools",
+    "dist",
+    "src/client/typings",
+    "src/server/typings",
+    "**/*.spec.ts",
+    "typings",
+    "typings/globals",
+    "typings/index.d.ts"
+  ]
+}
