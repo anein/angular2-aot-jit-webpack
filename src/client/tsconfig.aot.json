@@ -27,8 +27,6 @@
       "../../node_modules/@angular"
     ],
     "types"                     : [
-      //  "core-js",
-      // "node",
       "socket.io-client"
     ]
   },
